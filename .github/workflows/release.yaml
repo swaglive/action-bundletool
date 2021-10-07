@@ -23,6 +23,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - run: ls -ahl
+    - run: pwd
+
     - name: Setup - Install bundletool
       uses: ./action.yml
       with:
