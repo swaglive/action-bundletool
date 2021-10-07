@@ -6,17 +6,16 @@ branding:
   color: yellow
 inputs:
   path:
-    description: "Version range or exact version of a Python version to use, using SemVer's version range syntax."
+    description: Path to install bundletool.jar
     default: bundletool.jar
   version:
-    description: "Version range or exact version of a Python version to use, using SemVer's version range syntax."
+    description: bundletool version to install
     default: '1.8.0'
-  # token:
-  #   description: Used to pull python distributions from actions/python-versions. Since there's a default, this is typically not supplied by the user.
-  #   default: ${{ github.token }}
-  # chown node:node
 runs:
   using: docker
-  image: 'docker://ghcr.io/swaglive/bundletool:${{ inputs.version }}'
+  image: 'docker://ghcr.io/swaglive/bundletool:1.8.0'
   args:
+  - wget
+  - -O
   - ${{ inputs.path }}
+  - https://github.com/google/bundletool/releases/download/${{ inputs.version }}/bundletool-all-${{ inputs.version }}.jar
