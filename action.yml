@@ -22,23 +22,3 @@ runs:
   image: docker://ghcr.io/swaglive/docker-bundletool:${{ inputs.version }}
   args:
   - ${{ inputs.path }}
-
-
-
-
-
-
-
-
-
-#   env:
-#     repo: google/bundletool
-#     version: 1.8.0
-#     file: bundletool-all-1.8.0.jar
-#     target: bin/bundletool/1.8.0/bundletool.jar
-#
-# - name: Setup - Install bundletool
-#   uses: swaglive/setup-bundletool@master
-#   with:
-#     version: 1.8.0
-#     path: bundletool-all-1.8.0.jar
