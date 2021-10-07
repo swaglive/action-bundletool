@@ -5,17 +5,11 @@ branding:
   icon: code
   color: yellow
 inputs:
-  version:
-    description: bundletool version to install
-    default: '1.8.0'
   path:
     description: Path to install bundletool.jar
     default: bundletool.jar
 runs:
   using: docker
-  image: 'docker://bash'
-  entrypoint: wget
+  image: 'docker://ghcr.io/swaglive/bundletool:1.8.0'
   args:
-  - -O
   - ${{ inputs.path }}
-  - https://github.com/google/bundletool/releases/download/${{ inputs.version }}/bundletool-all-${{ inputs.version }}.jar
