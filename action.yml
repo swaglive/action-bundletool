@@ -14,8 +14,8 @@ inputs:
 runs:
   using: docker
   image: 'docker://ghcr.io/swaglive/bundletool:1.8.0'
+  entrypoint: wget
   args:
-  - wget
   - -O
   - ${{ inputs.path }}
   - https://github.com/google/bundletool/releases/download/${{ inputs.version }}/bundletool-all-${{ inputs.version }}.jar
