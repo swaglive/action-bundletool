@@ -27,7 +27,7 @@ jobs:
     - run: pwd
 
     - name: Setup - Install bundletool
-      uses: ./action.yml
+      uses: ./
       with:
         version: ${{ matrix.version }}
         path: bundletool-all-${{ matrix.version }}.jar
